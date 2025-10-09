@@ -1,4 +1,6 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
-alias(libs.plugins.android.application) apply false
+    // Define the Android Application plugin and its version for the entire project.
+    // 'apply false' means it will be applied later in the app-level build.gradle.
+    id 'com.android.application' version '8.4.1' apply false
 }

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InAppToss Game</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<div id="game-container">
+
+    <!-- 배경 이미지 -->
+    <img src="images/room_bg.png" class="bg-img" />
+
+    <!-- 클릭 가능한 오브젝트 -->
+    <div class="click-area" id="door" data-action="open-door"></div>
+    <div class="click-area" id="table" data-action="inspect-table"></div>
+    <div class="click-area" id="bookshelf" data-action="open-puzzle-bookshelf"></div>
+
+    <!-- 퍼즐 UI (숨김) -->
+    <div id="puzzle-ui" class="hidden">
+        <iframe src="puzzles/puzzle1.html"></iframe>
+        <button id="close-puzzle">닫기</button>
+    </div>
+
+    <!-- 대화/스크립트 박스 -->
+    <div id="dialog-box" class="hidden">
+        <p id="dialog-text"></p>
+        <button id="next-dialog">다음</button>
+    </div>
+
+</div>
+
+<script src="js/gameManager.js"></script>
+<script src="js/mapManager.js"></script>
+<script src="js/puzzleManager.js"></script>
+<script src="js/uiManager.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>
