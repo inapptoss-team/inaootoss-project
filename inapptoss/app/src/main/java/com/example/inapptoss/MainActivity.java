@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         webView.addJavascriptInterface(new GameBridge(this, webView), "GameBridge");
 
         // HTML5 게임 파일 로드
-        webView.loadUrl("app/assets/index.html");
+        webView.loadUrl("file:///android_asset/index.html");
     }
 
     @Override
