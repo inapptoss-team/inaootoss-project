@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         webView.setWebChromeClient(new WebChromeClient());
 
         // JS <-> Java 브릿지 연결
+
         webView.addJavascriptInterface(new GameBridge(this, webView), "GameBridge");
 
         // HTML5 게임 파일 로드
