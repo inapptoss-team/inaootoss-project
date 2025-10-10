@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        webView = new WebView(this);
+        webView = new WebView(
+                this);
         setContentView(webView);
 
         // 2. SET THE WebViewClient
