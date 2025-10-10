@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle 01</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        .puzzle-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .answer-input {
+            padding: 10px;
+            margin-top: 15px;
+            width: 80%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .submit-button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<div class="puzzle-container">
+    <h1>Puzzle 01: The Riddle</h1>
+    <p>I speak without a mouth and hear without ears. I have no body, but I come alive with wind. What am I?</p>
+    <input type="text" id="answer" class="answer-input" placeholder="Enter your answer">
+    <br>
+    <button onclick="checkAnswer()" class="submit-button">Submit</button>
+    <p id="result"></p>
+</div>
+
+<script>
+    // This function can be used to communicate back to your Android app
+    function closePuzzle() {
+        if (window.GameBridge && typeof window.GameBridge.puzzleSolved === 'function') {
+            // Example: Call a method on your Java bridge
+            window.GameBridge.puzzleSolved('puzzles01');
+        } else {
+            alert("Puzzle complete! (GameBridge not found)");
+        }
+    }
+
+    function checkAnswer() {
+        const userAnswer = document.getElementById('answer').value.toLowerCase().trim();
+        const resultElement = document.getElementById('result');
+
+        if (userAnswer === 'echo') {
+            resultElement.textContent = 'Correct! The puzzle is solved.';
+            resultElement.style.color = 'green';
+
+            // You could automatically close the puzzle after a short delay
+            setTimeout(closePuzzle, 2000); // Wait 2 seconds before closing
+        } else {
+            resultElement.textContent = 'Incorrect. Please try again.';
+            resultElement.style.color = 'red';
+        }
+    }
+</script>
+
+</body>
+</html>
