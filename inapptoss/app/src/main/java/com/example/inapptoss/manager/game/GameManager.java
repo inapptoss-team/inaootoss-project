@@ -34,6 +34,10 @@ public class GameManager {
         if (mapManager != null) {
             mapManager.CallMap("lab_intro");
         }
+
+        if (playerManager != null) {
+            playerManager.setState(State.PlayerState.IN_GAME);
+        }
     }
 
     public void saveProgress() {
